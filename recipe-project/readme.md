@@ -1,6 +1,9 @@
 # Recipe API Project
 Here's a working demo of the project
-<video controls src="recipe_vid.mp4" title="Title"></video>
+### Watch the Demo Video
 
-## Tech Stack:
+[![Watch the Demo Video](https://img.youtube.com/vi/zE5XIFTAet8/maxresdefault.jpg)](https://youtu.be/zE5XIFTAet8)
+
+
+### Tech Stack:
 Bootstrap, javascript, api-ninjas api, gsap (Tween), jquery
