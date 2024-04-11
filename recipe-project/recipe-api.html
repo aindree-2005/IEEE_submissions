@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="recipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <title>Recipe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row"><div class="name"><h1>Recipe app</h1></div></div>
+        <div class="row">
+            </div><div class="story">
+                <h1>Recipe Search!</h1>
+                <p>Click here to search your favorite recipes:</p>
+                <form id="recipe">
+                    <div class="form-group">
+                        <label for="searchInput">Enter keywords:</label>
+                        <input type="text" class="form-control" id="searchInput" name="searchInput">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+                <div id="details"></div>
+            </div>
+        </div>
+
+        
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        TweenMax.from(".name", 2, {
+            delay: 1.5,
+            y: 20,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+        TweenMax.from(".story", 2, {
+            delay: 3,
+            y: 40,
+            opacity: 0,
+            ease: Expo.easeInOut
+        });
+        $('#recipe').submit(function(event) {
+    event.preventDefault();
+    var query = $('#searchInput').val();
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
+        headers: { 'X-Api-Key': 'o5vZEk5xoA0xfHNv1NmPAX5tbRxTl8LdXfyVk6JR' },
+        contentType: 'application/json',
+        success: function(result) {
+            var recipe = result[0]; //shows most matching recipe
+            //splitting to prettify the UI
+            function bullet(x, c) {
+                return x.split(c).map(x1 => `<li>${x1.trim()}</li>`).join('');
+            }
+            const ing = bullet(recipe.ingredients, '|');
+            const ins = bullet(recipe.instructions, '.');
+            $('#details').html(`
+                <h2>${recipe.title}</h2>
+                <h4><b>Ingredients:</b></h4>
+                <ul>${ing}</ul>
+                <hr>
+                <h4><b>Servings:</b><br>${recipe.servings}</h4>
+                <hr>
+                <h4><b>Instructions:</b></h4>
+                <ul>${ins}</ul>
+            `);
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
