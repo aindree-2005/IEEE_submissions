@@ -14,6 +14,9 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     "eol-last": "off",
-    "no-multiple-empty-lines": "off"
+    "no-multiple-empty-lines": "off",
+    "no-trailing-spaces": "off",
+    "semi": "off",
+    "vue/multi-word-component-names": "off"
   }
 }

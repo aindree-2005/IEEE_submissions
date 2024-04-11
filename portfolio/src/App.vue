@@ -1,33 +1,35 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <router-link to="/experience">Experience</router-link>
-    <router-link to="/skills">Skills</router-link>
-    <router-link to="/contact">Contact</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <Navbar/>
+    <router-view />
+  </div>
 </template>
 
+<script>
+import '@fortawesome/fontawesome-free/css/all.css';
+import Navbar from './components/NavBar.vue'; // Import the Navbar component
+
+export default {
+  name: 'App',
+  components: {
+    Navbar
+  } // Added closing curly brace here
+}
+</script>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif, "Libre Caslon Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #4d3319;
+  margin-top: 0; 
+  background-color: #f5f5dc;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  background-color: #f5f5dc;
 }
 </style>
