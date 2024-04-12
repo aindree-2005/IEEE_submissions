@@ -57,9 +57,9 @@ export default {
     color:#f5f5dc ;
     background-color:#482504 ;
   }
-  .nav-link.active-link {
+  .nav-link:active{
     text-decoration: underline;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color:#f5f5dc ;
     background-color:#482504 ;
     border-color: #f5f5dc;
