@@ -24,11 +24,12 @@ export default {
     background-color: #f5f5dc;
     position: sticky;
     top: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(222, 139, 123, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    font-family: "Libre Caslon Display", serif;
   }
   
   .navbar-left {
@@ -39,6 +40,9 @@ export default {
   .navbar-right {
     display: flex;
     align-items: center;
+    font-size: 1.2rem;
+    padding-left:12px;
+    padding-right:6px;
   }
   
   .nav-link {
@@ -56,7 +60,7 @@ export default {
   }
   .nav-link.active-link {
     text-decoration: underline;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color:#f5f5dc ;
     background-color:#482504 ;
     border-color: #f5f5dc;

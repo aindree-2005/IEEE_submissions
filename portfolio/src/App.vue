@@ -31,5 +31,6 @@ export default {
 }
 body {
   background-color: #f5f5dc;
+  font-family: "Libre Caslon Display", serif;
 }
 </style>
