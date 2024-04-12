@@ -4,8 +4,7 @@
         <span class="logo">Aindree's Portfolio</span>
       </div>
       <div class="navbar-right">
-        <router-link to="/" class="nav-link">Home</router-link>
-        <router-link to="/about" class="nav-link">About</router-link>
+        <router-link to="/" class="nav-link">About</router-link>
         <router-link to="/experience" class="nav-link">Experience</router-link>
         <router-link to="/skills" class="nav-link">Skills</router-link>
         <router-link to="/contact" class="nav-link">Contact</router-link>
