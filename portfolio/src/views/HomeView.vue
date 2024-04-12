@@ -109,6 +109,14 @@ h1 {
   font-size: 10rem;
   margin:0 auto
 }
+#hi:hover {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 12rem;
+  margin:0 auto;
+  color:#db3585;
+  transition: font-size 0.3s ease;
+  transition:color 1s ease-in-out;
+}
 #ok2{
   color:#db3585;
 }
