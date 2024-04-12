@@ -201,6 +201,8 @@ h1 {
   background-color: rgb(127, 92, 71);
   box-shadow: #db3585 10px 10px;
   border-radius: 2%;
+  font-family: "Libre Caslon Display", serif;
+  font: size 1.2rem;
 }
 .box:hover {
   height: 160px;
@@ -209,5 +211,6 @@ h1 {
   background-color:#db3585 ;
   box-shadow: rgb(127, 92, 71) 10px 10px;
   border-radius: 6%;
+  font-family: "Libre Caslon Display", serif;
 }
 </style>
