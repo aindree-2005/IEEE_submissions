@@ -7,9 +7,9 @@
         <div id ="tryok" style=" display: block; border: 4px dashed #db3585; padding: 10px; width:70%; margin-left:auto;margin-right:auto; margin-top:2rem; background-color:blanchedalmond;">
             <p id="ok2"><b>Role: </b>
             <span style="color:#331c06; font-family:Arial, serif;">{{ item.title }}</span></p> 
-            <p  id="ok2"><b>Company </b><span style="color:#331c06; font-family:Arial, serif;">{{ item.company }}</span></p>  <br>         
-            <p  id="ok2"><b>Time</b><span style="color:#331c06; font-family:Arial, serif;">{{ item.duration }}</span></p><br>
-            <p  id="ok2"><b>Description<br></b><span style="color:#331c06; font-family:Arial, serif;">{{ item.description }}</span></p><br>
+            <p  id="ok2"><b>Company: </b><span style="color:#331c06; font-family:Arial, serif;">{{ item.company }}</span></p>  <br>         
+            <p  id="ok2"><b>Time: </b><span style="color:#331c06; font-family:Arial, serif;">{{ item.duration }}</span></p><br>
+            <p  id="ok2"><b>Description: <br></b><span style="color:#331c06; font-family:Arial, serif;">{{ item.description }}</span></p><br>
             
         </div>
     </div>
@@ -157,7 +157,14 @@ info h1,#bruh{
 #hi {
   font-family: "Libre Caslon Display", serif;
   font-size: 10rem;
-  margin:0 auto
+  margin:0 auto;
+}
+@media only screen and (max-width: 600px) {
+  #hi {
+    font-size: 6rem;
+  }
+  #ok{font-size:4rem;}
+  #hi:hover{font-size:8rem}
 }
 #hi:hover {
   font-family: "Libre Caslon Display", serif;

@@ -213,4 +213,11 @@ h1 {
   border-radius: 6%;
   font-family: "Libre Caslon Display", serif;
 }
+@media only screen and (max-width: 600px) {
+  #hi {
+    font-size: 6rem;
+  }
+  #ok{font-size:4rem;}
+  #hi:hover{font-size:8rem}
+}
 </style>
