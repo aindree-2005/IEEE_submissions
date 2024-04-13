@@ -1,13 +1,14 @@
 <template>
-    <div >
-     <div id="signup">
-      <h1 >Sign Up</h1>
-      <p><input type="text" placeholder="Email" v-model="email" /></p>
-      <p><input type="password" placeholder="Password" v-model="password" /></p>
-      <p><button @click="signup">Submit</button></p>
-      <p><button @click="signInWithGoogle">Sign In With Google</button></p>
-     </div>
-      
+    <div>
+      <div id="signup-container">
+        <h1>Sign Up</h1>
+        <div id="signup-form">
+          <p><input type="text" placeholder="Email" v-model="email" /></p>
+          <p><input type="password" placeholder="Password" v-model="password" /></p>
+          <p><button @click="signup">Submit</button></p>
+          <p><button @click="signInWithGoogle">Sign In With Google</button></p>
+        </div>
+      </div>
     </div>
   </template>
   
@@ -25,9 +26,9 @@
   
       const signup = () => {
         createUserWithEmailAndPassword(getAuth(), email.value, password.value)
-          .then((userCredential) => {
+          .then(() => {
             console.log("Successfully signed up user");
-            router.push("/events"); // Redirect to "/events" route after successful sign-up
+            router.push("/events");
           })
           .catch((error) => {
             console.log(error.code);
@@ -48,10 +49,48 @@
     }
   };
   </script>
-<style scoped>
-body h1 { color: rgba(216, 123, 222, 0.918); text-decoration: none; margin-left: 20px; font-size: 2rem; font-family: "Urbanist", sans-serif; font-weight: 200; font-style: normal; }
-body #signup { width: 65%; margin: 0 auto; }
-</style>
-
   
+  <style scoped>
+  
+  #signup-container {
+    background-color: #783083;
+    padding: 20px;
+    border-radius: 10px;
+    width: 65%;
+    margin: 0 auto;
+    margin-top:70px;
+    margin-bottom:70px;
+  }
+  
+  #signup-form {
+    color: #783083;
+  }
+  
+  #signup-form input[type="text"],
+  #signup-form input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+  }
+  
+  #signup-form button {
+    padding: 10px 20px;
+    background-color: #fefcff;
+    color: rgb(63, 6, 58);
+    border: none;
+    border-radius: 5px;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 200;
+    cursor: pointer;
+  }
+  
+  #signup-form button:hover {
+    background-color: rgb(63, 6, 58);
+  }
+  h1{font-size:2rem;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+    color: white;}
+  </style>
   
