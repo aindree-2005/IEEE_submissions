@@ -1,13 +1,17 @@
 <template>
   <div class="home">
-    <h1>ok</h1>
+    <SignUp />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import SignUp from '@/components/SignUp.vue';
+
 export default {
   name: 'HomeView',
+  components: {
+    SignUp
+  }
 }
 </script>
 <style>
