@@ -7,13 +7,12 @@
 
 <script>
 import '@fortawesome/fontawesome-free/css/all.css';
-import Navbar from './components/Navbar.vue'; // Import the Navbar component
-
+import Navbar from './components/Navbar.vue'; 
 export default {
   name: 'App',
   components: {
     Navbar
-  } // Added closing curly brace here
+  } 
 }
 </script>
 
@@ -25,12 +24,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #4d3319;
   margin-top: 0; 
-  background-color: #f5f5dc;
+  background-color: rgb(225, 43, 249)
 }
 body {
-  background-color: #f5f5dc;
-  font-family: "Libre Caslon Display", serif;
+  background-color: rgb(225, 43, 249);
+  font-family: "Urbanist", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 </style>
