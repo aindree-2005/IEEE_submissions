@@ -85,4 +85,15 @@ font-style: bold;
 font-size: 3rem;
 color: #f9edf9;
 }
+@media only screen and (max-width: 768px){
+   .navbar-left {
+        margin-right: 0;
+    }
+   .logo {
+        font-size: 2rem;
+    }
+   .nav-link {
+        font-size: 1.5rem;
+    }
+}
 </style>
