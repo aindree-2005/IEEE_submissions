@@ -51,3 +51,16 @@
 .story h1::after {
   content: ''; /* Required for pseudo-elements */
 }
+@media only screen and (max-width: 750px){
+  .name:hover,
+.story h1:hover {
+  padding: 1rem;
+  font-size: 4rem;
+  color: red;
+  transition: font-size 0.4s, color 0.5s;
+  letter-spacing: 2px;
+}p,ul{
+  margin-left:14px;
+}
+  
+}

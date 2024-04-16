@@ -65,13 +65,14 @@
             const ing = bullet(recipe.ingredients, '|');
             const ins = bullet(recipe.instructions, '.');
             $('#details').html(`
-                <h2>${recipe.title}</h2>
-                <h4><b>Ingredients:</b></h4>
+                <h2  style="color:maroon; text-decoration:underline">${recipe.title}</h2>
+                <h4 style="color:red"><b>Ingredients:</b></h4>
                 <ul>${ing}</ul>
                 <hr>
-                <h4><b>Servings:</b><br>${recipe.servings}</h4>
+                <h4 style="color:red"><b>Servings:</b></h4>
+                <br><p>${recipe.servings}</p>
                 <hr>
-                <h4><b>Instructions:</b></h4>
+                <h4 style="color:red"><b>Instructions:</b></h4>
                 <ul>${ins}</ul>
             `);
         },
