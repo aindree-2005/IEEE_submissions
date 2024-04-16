@@ -125,14 +125,26 @@ body {
 @media only screen and (max-width: 768px) {
   .first-box {
     width: 90%; 
+    width:600px;
   }
 
   .first-box {
-    grid-template-columns: 1fr; /* Stack image and text on smaller screens */
+    grid-template-columns: 3fr; /* Stack image and text on smaller screens */
   }
 
   .right {
     text-align: center; 
+  }
+  .logo2,.ok,.ok2{
+    font-size:1.5rem;
+    margin-right: 22px;
+  }
+  .caption {
+    font-size: 1.5rem;
+  }
+  button{
+    font-size:4px;
+    padding: 4px 12px;
   }
 }
 </style>
