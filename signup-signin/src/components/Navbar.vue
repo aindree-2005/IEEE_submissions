@@ -5,7 +5,6 @@
     </div>
     <div class="navbar-right">
       <router-link to="/" class="nav-link" exact>home</router-link>
-      <router-link to="/about" class="nav-link">about</router-link>
       <router-link to="/events" class="nav-link">events</router-link>
       <router-link to="/speakers" class="nav-link">speakers</router-link>
     </div>

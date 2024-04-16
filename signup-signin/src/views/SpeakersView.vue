@@ -97,7 +97,7 @@ h1 {
 
 .btnx {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 20px;
 }
 
