@@ -97,6 +97,9 @@ body {
     width: 90%; 
     width:600px;
   }
+  h1{
+    font-size:2.8rem;
+  }
 
   .first-box {
     grid-template-columns: 3fr; /* Stack image and text on smaller screens */

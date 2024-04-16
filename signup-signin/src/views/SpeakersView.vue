@@ -112,5 +112,8 @@ h1 {
     font-size: 2.5rem;
     color: #f9edf9;
   }
+  h1{
+    font-size:2.8rem;
+  }
 }
 </style>
