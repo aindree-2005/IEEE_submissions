@@ -11,11 +11,9 @@
             <p id ="date">Date: {{ event.date }}</p>
             <p class="event-desc">{{ event.desc }}</p>
             <div class="col-md-6 btnx">
-              <button class="btn btn-danger">Register</button>
+              <button class="btn btn-danger" @click=signup() >Register</button>
               <button class="btn btn-secondary">Feedback</button>
             </div>
-
-            
           </div>
         </div>
       </div>
@@ -32,7 +30,7 @@ export default {
         { title: "DevIX", date: "June 6th, 2024", desc: "Embark on a six-hour journey of empowerment at our female-only web dev hackathon. Unleash your coding prowess, network with like-minded women, and build transformative digital solutions. Empowering diversity and innovation in a supportive environment. Join us!" },
         { title: "CyberTrain", date: "June 7th, 2024", desc: "Immerse yourself in an adrenaline-fueled cybersecurity hackathon, featuring an 8-hour marathon of challenges and Capture The Flag (CTF) competitions. Dive deep into digital defenses, collaborate with experts, and fortify your skills in this high-stakes event. Join the battle for digital security supremacy!" },
         { title: "Revelation", date: "June 8th, 2024", desc: "Unravel the mysteries of software in our reverse engineering coding challenge. Decode, analyze, and reconstruct complex systems within constraints. Test your problem-solving skills and ingenuity in this mind-bending quest. Are you ready to crack the code?" }
-      ]
+      ],
     }
   }
 }
