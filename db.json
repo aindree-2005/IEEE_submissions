@@ -4,14 +4,16 @@
         "name": "John Doe",
         "email": "john@example.com",
         "phone": "1234567890",
-        "events": ["GenerationAI", "Revelation"]
+        "events": ["GenerationAI", "Revelation"],
+        "speakers": ["Alice Smith"]
       },
       {
         "name": "Jane Smith",
         "email": "jane@example.com",
         "phone": "0987654321",
-        "events": ["DevIX", "CyberTrain"]
+        "events": ["Charlie Brown"]
       }
     ]
   }
+  
   

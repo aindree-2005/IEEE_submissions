@@ -11,7 +11,7 @@
             <p id ="date">Date: {{ event.date }}</p>
             <p class="event-desc">{{ event.desc }}</p>
             <div class="col-md-6 btnx">
-              <button class="btn btn-danger" @click=signup() >Register</button>
+              <button class="btn btn-danger" @click="signup">Register</button>
               <button class="btn btn-secondary">Feedback</button>
             </div>
           </div>
@@ -31,6 +31,11 @@ export default {
         { title: "CyberTrain", date: "June 7th, 2024", desc: "Immerse yourself in an adrenaline-fueled cybersecurity hackathon, featuring an 8-hour marathon of challenges and Capture The Flag (CTF) competitions. Dive deep into digital defenses, collaborate with experts, and fortify your skills in this high-stakes event. Join the battle for digital security supremacy!" },
         { title: "Revelation", date: "June 8th, 2024", desc: "Unravel the mysteries of software in our reverse engineering coding challenge. Decode, analyze, and reconstruct complex systems within constraints. Test your problem-solving skills and ingenuity in this mind-bending quest. Are you ready to crack the code?" }
       ],
+    }
+  },
+  methods: {
+    signup() {
+      this.$router.push('/signup');
     }
   }
 }
