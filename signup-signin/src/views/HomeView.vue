@@ -43,9 +43,11 @@ body {
   width: 85%;
   margin: auto;
   margin-top: 10%;
+  padding-top: 12px;
   border-radius: 10px;
   border: 2px dashed white;
   position: relative;
+  margin-bottom: 10%;
 }
 
 .left,
@@ -54,7 +56,7 @@ body {
 }
 
 .right {
-  display: inline-block;
+  display: inline-flexbox;
   align-items: center;
   padding-left: 12px;
   padding-right: 8px;
@@ -124,12 +126,15 @@ body {
 /* Media Query for smaller screens */
 @media only screen and (max-width: 768px) {
   .first-box {
-    width: 90%; 
-    width:600px;
+    width: 70%; 
+    width:400px;
   }
 
   .first-box {
-    grid-template-columns: 3fr; /* Stack image and text on smaller screens */
+    grid-template-columns: 1fr; 
+  }
+  .left{
+    display: none;
   }
 
   .right {

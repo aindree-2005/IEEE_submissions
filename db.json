@@ -1,19 +1,52 @@
 {
-    "attendees": [
-      {
-        "name": "John Doe",
-        "email": "john@example.com",
-        "phone": "1234567890",
-        "events": ["GenerationAI", "Revelation"],
-        "speakers": ["Alice Smith"]
-      },
-      {
-        "name": "Jane Smith",
-        "email": "jane@example.com",
-        "phone": "0987654321",
-        "events": ["Charlie Brown"]
-      }
-    ]
-  }
-  
-  
+  "attendees": [
+    {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "1234567890",
+      "events": [
+        "GenerationAI",
+        "Revelation"
+      ],
+      "speakers": [
+        "Alice Smith"
+      ],
+      "id": "08fa"
+    },
+    {
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "phone": "0987654321",
+      "events": [
+        "Charlie Brown"
+      ],
+      "id": "0e35"
+    },
+    {
+      "id": "b0cd",
+      "name": "janedoe",
+      "email": "abc@gmail.com",
+      "phone": "01234567890",
+      "selectedEvents": [
+        "GenerationAI"
+      ],
+      "selectedSessions": [
+        "Bob Johnson",
+        "Charlie Brown"
+      ]
+    },
+    {
+      "id": "5ec1",
+      "name": "janedoe",
+      "email": "abc@gmail.com",
+      "phone": "01234567890",
+      "selectedEvents": [
+        "GenerationAI"
+      ],
+      "selectedSessions": [
+        "Bob Johnson",
+        "Charlie Brown"
+      ]
+    }
+  ]
+}
