@@ -2,7 +2,7 @@
   <div class="events">
     <div class="container">
       <div class="events-header">
-        <h1>Speaker Sessions</h1>
+        <h1>Speaker Sessions!</h1>
       </div>
       <div class="row" id="eventContainer">
         <div v-for="(speaker, index) in speakers" :key="index" class="col-lg-6">
@@ -11,7 +11,7 @@
             <p id="date">Date: {{ speaker.date }}</p>
             <p class="event-desc">{{ speaker.desc }}</p>
             <div class="btnx">
-              <button class="btn btn-danger">Register</button>
+              <button class="btn btn-danger" @click="signup">Register</button>
               <button class="btn btn-secondary">Feedback</button>
             </div>
           </div>
@@ -32,13 +32,21 @@ export default {
         { title: "Diana Garcia", date: "8th June, 2024", desc: "Unlock 'Reverse Engineering Strategies' with Diana Garcia. Dive deep into techniques for analyzing, understanding, and reconstructing complex systems to enhance your problem-solving skills." }
       ]
     }
+  },
+  methods: {
+    signup() {
+      this.$router.push('/signup');
+    }
   }
 }
 </script>
 
 <style scoped>
 @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css');
-
+body{
+  height:100vh;
+  display: flex;
+}
 .events {
   background-color: #3a0930;
   padding: 50px 0;
@@ -114,6 +122,9 @@ h1 {
   }
   h1{
     font-size:2.8rem;
+  }
+  body{
+    height:100vh;
   }
 }
 </style>

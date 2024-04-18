@@ -84,7 +84,6 @@ h1{
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  content-align:center;
 }
 
 body {

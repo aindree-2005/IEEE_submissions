@@ -47,6 +47,62 @@
         "Bob Johnson",
         "Charlie Brown"
       ]
+    },
+    {
+      "id": "d48e",
+      "name": "LALALA",
+      "email": "abc@gmail.com",
+      "phone": "01234567890",
+      "selectedEvents": [
+        "GenerationAI",
+        "Revelation"
+      ],
+      "selectedSessions": [
+        "Charlie Brown"
+      ]
+    },
+    {
+      "id": "6e81",
+      "name": "LALALA",
+      "email": "abc@gmail.com",
+      "phone": "01234567890",
+      "selectedEvents": [
+        "GenerationAI",
+        "Revelation"
+      ],
+      "selectedSessions": [
+        "Charlie Brown"
+      ]
+    },
+    {
+      "id": "f590",
+      "name": "Jane Doe",
+      "email": "janedoe@vue.org",
+      "phone": "1231241231",
+      "selectedEvents": [
+        "GenerationAI",
+        "CyberTrain",
+        "DevIX"
+      ],
+      "selectedSessions": [
+        "Charlie Brown",
+        "Diana Garcia"
+      ]
+    },
+    {
+      "id": "86fa",
+      "name": "Jane Doe",
+      "email": "janedoe@vue.org",
+      "phone": "1231241231",
+      "selectedEvents": [
+        "GenerationAI",
+        "CyberTrain",
+        "DevIX"
+      ],
+      "selectedSessions": [
+        "Charlie Brown",
+        "Diana Garcia"
+      ]
     }
   ]
 }

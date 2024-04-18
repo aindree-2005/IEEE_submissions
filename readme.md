@@ -6,6 +6,7 @@
    ```sh
    cd signup-signin
    npm install
+   json-server --watch db.json
    npm run serve
 2. **Navigate to the `portfolio` directory:**
    ```sh

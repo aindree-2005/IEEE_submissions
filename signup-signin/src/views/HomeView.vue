@@ -35,6 +35,7 @@ body {
   font-family: "Urbanist", sans-serif;
   font-weight: 200;
   font-style: normal;
+  height:120vh;
 }
 
 .first-box {
