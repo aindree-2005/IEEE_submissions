@@ -28,7 +28,11 @@
                     <label for="searchInput">Enter keywords:</label>
                     <input type="text" class="form-control" id="searchInput" name="searchInput">
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Search</button><div class="loader d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
             </form>
             <div id="cool">
                 <div id="details"></div>
@@ -36,6 +40,7 @@
 
         </div>
     </div>
+    
 </body>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -59,12 +64,14 @@
     $('#recipe').submit(function(event) {
         event.preventDefault();
         var query = $('#searchInput').val();
+        $('.loader').removeClass('d-none'); 
         $.ajax({
             method: 'GET',
             url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
             headers: { 'X-Api-Key': 'o5vZEk5xoA0xfHNv1NmPAX5tbRxTl8LdXfyVk6JR' },
             contentType: 'application/json',
             success: function(result) {
+                $('.loader').addClass('d-none'); 
                 var recipes = result.slice(0, 5);
                 var top = '';
                 for (var i = 0; i < recipes.length; i++) {
@@ -80,20 +87,20 @@
                         <div class="details" style="display: none;">
                             <div class="card mb-3" style= "width:70%; margin: 0 auto;">
                                 <div class="card-body inn" style= "width:70%; margin: 0 auto;">
-                                    <h3 class="card-title" style="color:#9a064d; text-decoration:underline,text-shadow: white 4px 4px"><b>Servings</b></h3>
-                                    <h6 class="card-text" >${recipe.servings}</h6>
+                                    <h3 class="card-title" style="color:#db3585; text-decoration:underline,text-shadow: white 4px 4px;font-family: "Libre Caslon Display", serif;font-weight: 300;font-style: normal;"><b>Servings</b></h3>
+                                    <h6 class="card-text" style="font-family: 'Roboto', sans-serif;font-weight: 400;font-style: normal; color:#2b0014">${recipe.servings}</h6>
                                 </div>
                             </div>
                             <div class="card mb-3" style= "width:70%; margin: 0 auto;" >
                                 <div class="card-body inn" style= "width:70%; margin: 0 auto;">
-                                    <h3 class="card-title"  style="color:#9a064d; text-decoration:underline,text-shadow: white 4px 4px"><b>Ingredients</b></h3>
-                                   <p> <ul>${ing}</ul></p>
+                                    <h3 class="card-title"  style="color:#db3585; text-decoration:underline,text-shadow: white 4px 4px;font-family: "Libre Caslon Display", serif;font-weight: 300;font-style: normal;"><b>Ingredients</b></h3>
+                                   <p style="font-family: 'Roboto', sans-serif;font-weight: 700;font-style: normal;color:#2b0014"> <ul style="font-family: 'Roboto', sans-serif;font-weight: 400;font-style: normal; color:#2b0014">${ing}</ul></p>
                                 </div>
                             </div>
                             <div class="card mb-3" style= "width:70%; margin: 0 auto;" >
                                 <div class="card-body inn" style= "width:70%; margin: 0 auto;">
-                                    <h3 class="card-title"  style="color:#9a064d; text-decoration:underline,text-shadow: white 4px 4px"><b>Steps</b></h3>
-                                   <p> <ul>${steps}</ul> </p>
+                                    <h3 class="card-title"  style="color:#db3585; text-decoration:underline,text-shadow: white 4px 4px; font-family: "Libre Caslon Display", serif;font-weight: 300;font-style: normal;"><b>Steps</b></h3>
+                                   <p style="font-family: 'Roboto', sans-serif;font-weight: 700;font-style: normal;color:#2b0014"> <ul style="font-family: 'Roboto', sans-serif;font-weight: 400;font-style: normal; color:#2b0014">${steps}</ul> </p>
                                 </div>
                             </div>
                         </div>
@@ -112,4 +119,3 @@
 </script>
 
 </html>
-
