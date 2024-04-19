@@ -1,6 +1,4 @@
 # Portfolio Using Vue
-Here's a working demo of the project
-### Watch the Demo Video
 
 ### Tech Stack:
 Bootstrap, Javascript, Vue, Typed.js

@@ -11,77 +11,105 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="recipe.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <title>Recipe</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="row"><div class="name"><h1>Recipe app</h1></div></div>
-        <div class="row">
-            </div><div class="story">
-                <h1>Recipe Search!</h1>
-                <p>Click here to search your favorite recipes:</p>
-                <form id="recipe">
-                    <div class="form-group">
-                        <label for="searchInput">Enter keywords:</label>
-                        <input type="text" class="form-control" id="searchInput" name="searchInput">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </form>
+    <h1 id="ok">Food-for-thought</h1>
+    <div class="row-md-3 align-self-center">
+        <div class="col-md-9 story ">
+            <h1 id="ok2">Recipe Search!</h1>
+            <p>Click here to search your favorite recipes:</p>
+
+            <form id="recipe">
+                <div class="form-group">
+                    <label for="searchInput">Enter keywords:</label>
+                    <input type="text" class="form-control" id="searchInput" name="searchInput">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+            <div id="cool">
                 <div id="details"></div>
             </div>
+
         </div>
-
-        
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        TweenMax.from(".name", 2, {
-            delay: 1.5,
-            y: 20,
-            opacity: 0,
-            ease: Expo.easeInOut
-        });
-        TweenMax.from(".story", 2, {
-            delay: 3,
-            y: 40,
-            opacity: 0,
-            ease: Expo.easeInOut
-        });
-        $('#recipe').submit(function(event) {
-    event.preventDefault();
-    var query = $('#searchInput').val();
-    $.ajax({
-        method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
-        headers: { 'X-Api-Key': 'o5vZEk5xoA0xfHNv1NmPAX5tbRxTl8LdXfyVk6JR' },
-        contentType: 'application/json',
-        success: function(result) {
-            var recipe = result[0]; //shows most matching recipe
-            //splitting to prettify the UI
-            function bullet(x, c) {
-                return x.split(c).map(x1 => `<li>${x1.trim()}</li>`).join('');
-            }
-            const ing = bullet(recipe.ingredients, '|');
-            const ins = bullet(recipe.instructions, '.');
-            $('#details').html(`
-                <h2  style="color:maroon; text-decoration:underline">${recipe.title}</h2>
-                <h4 style="color:red"><b>Ingredients:</b></h4>
-                <ul>${ing}</ul>
-                <hr>
-                <h4 style="color:red"><b>Servings:</b></h4>
-                <br><p>${recipe.servings}</p>
-                <hr>
-                <h4 style="color:red"><b>Instructions:</b></h4>
-                <ul>${ins}</ul>
-            `);
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
-        }
-    });
-});
-
-    </script>
+    </div>
 </body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function bullet(x, c) {
+        return x.split(c).map(x1 => `<li>${x1.trim()}</li>`).join('');
+    }
+
+    TweenMax.from(".name", 2, {
+        delay: 0.4,
+        y: 12,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    TweenMax.from(".story", 2, {
+        delay: 0.5,
+        y: 20,
+        opacity: 0,
+        ease: Expo.easeInOut
+    });
+    $('#recipe').submit(function(event) {
+        event.preventDefault();
+        var query = $('#searchInput').val();
+        $.ajax({
+            method: 'GET',
+            url: 'https://api.api-ninjas.com/v1/recipe?query=' + query,
+            headers: { 'X-Api-Key': 'o5vZEk5xoA0xfHNv1NmPAX5tbRxTl8LdXfyVk6JR' },
+            contentType: 'application/json',
+            success: function(result) {
+                var recipes = result.slice(0, 5);
+                var top = '';
+                for (var i = 0; i < recipes.length; i++) {
+                    var recipe = recipes[i];
+                    ing = bullet(recipe.ingredients, '|');
+                    steps = bullet(recipe.instructions, '.');
+                    var entry = `
+                    <div class="card mb-3 stuff" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  color: #db3585; background-color: #FFCCDC;">
+                        <div class="card-body text-center mx-auto">
+                            <h1 class="card-title" style="color:#331c06; ">${recipe.title}</h1>
+                            <a href="#" class="btn btn-danger inside" data-index="${i}">View Recipe</a>
+                        </div>
+                        <div class="details" style="display: none;">
+                            <div class="card mb-3" style= "width:70%; margin: 0 auto;">
+                                <div class="card-body inn" style= "width:70%; margin: 0 auto;">
+                                    <h3 class="card-title" style="color:#9a064d; text-decoration:underline,text-shadow: white 4px 4px"><b>Servings</b></h3>
+                                    <h6 class="card-text" >${recipe.servings}</h6>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style= "width:70%; margin: 0 auto;" >
+                                <div class="card-body inn" style= "width:70%; margin: 0 auto;">
+                                    <h3 class="card-title"  style="color:#9a064d; text-decoration:underline,text-shadow: white 4px 4px"><b>Ingredients</b></h3>
+                                   <p> <ul>${ing}</ul></p>
+                                </div>
+                            </div>
+                            <div class="card mb-3" style= "width:70%; margin: 0 auto;" >
+                                <div class="card-body inn" style= "width:70%; margin: 0 auto;">
+                                    <h3 class="card-title"  style="color:#9a064d; text-decoration:underline,text-shadow: white 4px 4px"><b>Steps</b></h3>
+                                   <p> <ul>${steps}</ul> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    top += entry;
+                }
+                $('#cool').html(top);
+                $('.stuff').on('click', function() {
+                    var details = $(this).find('.details');
+                    details.slideToggle();
+                });
+            }
+        });
+    });
+</script>
+
 </html>
+
