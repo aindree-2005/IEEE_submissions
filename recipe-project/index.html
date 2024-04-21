@@ -113,6 +113,13 @@
                     event.preventDefault(); 
                     var details = $(this).find('.details');
                     details.slideToggle();
+                    var btn=$(this).find('.inside');
+                    if (btn.text() == 'View Recipe') {
+                        btn.text('Hide Recipe');
+                    } else {
+                        btn.text('View Recipe');
+                        
+                    }
                 });
             }
         });
