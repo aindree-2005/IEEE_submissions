@@ -109,7 +109,8 @@
                     top += entry;
                 }
                 $('#cool').html(top);
-                $('.stuff').on('click', function() {
+                $('.stuff').on('click', function(event) {
+                    event.preventDefault(); 
                     var details = $(this).find('.details');
                     details.slideToggle();
                 });
@@ -117,5 +118,6 @@
         });
     });
 </script>
+
 
 </html>
